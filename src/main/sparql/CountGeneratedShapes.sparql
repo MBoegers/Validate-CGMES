@@ -1,0 +1,13 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+SELECT ?g (COUNT(?shape) AS ?count)
+FROM NAMED <http://localhost:3030/test/data/CardShapes>
+FROM NAMED <http://localhost:3030/test/data/LitTypeShapes>
+FROM NAMED <http://localhost:3030/test/data/ResTypeShapes>
+WHERE {
+    GRAPH ?g {
+        ?shape rdf:type sh:NodeShape .
+    }
+}
+GROUP BY ?g

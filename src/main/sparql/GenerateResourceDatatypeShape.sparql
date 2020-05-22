@@ -1,0 +1,27 @@
+PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#>
+PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#>
+PREFIX cim: <http://iec.ch/TC57/2013/CIM-schema-cim16#>
+PREFIX cims: <http://iec.ch/TC57/1999/rdf-schema-extensions-19990926#>
+PREFIX xsd: <http://www.w3.org/2001/XMLSchema#>
+PREFIX sh: <http://www.w3.org/ns/shacl#>
+
+INSERT {
+  GRAPH <http://localhost:3030/test/data/ResTypeShapes> {
+    [] rdf:type sh:NodeShape ;
+            sh:targetClass ?class ;
+            sh:closed true ;
+            sh:ignoreProperties (rdf:type) ;
+            sh:property [
+                sh:path ?property;
+                sh:nodeKind sh:IRI;
+                sh:class ?targetClass;
+            ].
+  }
+} WHERE {
+  GRAPH <http://localhost:3030/test/data/rdfs> {
+    ?class rdf:type rdfs:Class ;
+           rdfs:subClassOf ?superClass .
+    ?property rdfs:domain ?subclass ;
+              rdfs:range ?targetClass
+  }
+}
