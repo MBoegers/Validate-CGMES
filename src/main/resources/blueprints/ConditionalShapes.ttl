@@ -1,6 +1,0 @@
-# in this blueprint ?class ?con and ?rule must be replaced
-[] rdf:type sh:NodeShape;
-    sh:targetClass ?class;
-    sh:closed true ;
-    sh:ignoreProperties (rdf:type) ;
-    sh:or ([sh:not [?con]] [?rule]).

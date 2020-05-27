@@ -24,7 +24,6 @@ The input files are in the [RDFS](src/main/resources/rdfs) resource directory.
 A Java 13 program reads and analysis the OCL files.
 SHACL shapes are generated from the invariants.
 The program files are in the [Java](src/main/java) source directory.
-This approach uses the blueprints in the [blueprints](src/main/resources/blueprints) directory.
 The input files are in the [OCL](src/main/resources/ocl) resource directory.
 
 ## References
