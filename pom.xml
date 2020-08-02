@@ -8,6 +8,14 @@
     <artifactId>validte-cgmes</artifactId>
     <version>1.0-SNAPSHOT</version>
 
+    <repositories>
+        <repository>
+            <id>eclipse</id>
+            <name>Eclipse Repository</name>
+            <url>https://repo.eclipse.org/content/groups/releases/</url>
+        </repository>
+    </repositories>
+
     <developers>
         <developer>
             <name>Merlin Bögershausen</name>
@@ -21,6 +29,9 @@
         <assertJ.version>3.16.1</assertJ.version>
         <maven.compiler.source>13</maven.compiler.source>
         <maven.compiler.target>13</maven.compiler.target>
+        <lombok.version>1.18.12</lombok.version>
+        <ocl.ecore.version>3.3.100.v20140610-0641</ocl.ecore.version>
+        <ocl.version>3.3.0.v20140120-1508</ocl.version>
     </properties>
 
     <dependencies>
@@ -50,6 +61,34 @@
             <artifactId>assertj-core</artifactId>
             <version>${assertJ.version}</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>compile</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse</groupId>
+            <artifactId>ocl</artifactId>
+            <version>${ocl.version}</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/org.eclipse.ocl-3.3.0.v20140120-1508.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.ocl</groupId>
+            <artifactId>ecore</artifactId>
+            <version>3.3.100</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/org.eclipse.ocl.ecore-3.3.100.v20140610-0641.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.ocl</groupId>
+            <artifactId>common</artifactId>
+            <version>1.2.0</version>
+            <scope>system</scope>
+            <systemPath>${project.basedir}/lib/org.eclipse.ocl.common-1.2.0.v20140610-0641.jar</systemPath>
         </dependency>
     </dependencies>
 </project>

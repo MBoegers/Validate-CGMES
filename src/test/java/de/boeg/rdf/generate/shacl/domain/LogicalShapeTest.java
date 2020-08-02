@@ -1,6 +1,5 @@
 package de.boeg.rdf.generate.shacl.domain;
 
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -34,15 +33,15 @@ public class LogicalShapeTest {
     void and() {
         Assertions.assertThatThrownBy(() -> new LogicalShape.AndShape(Collections.emptyList()));
         Assertions.assertThat(new LogicalShape.AndShape(List.of(shape1)).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1);
         Assertions.assertThat(new LogicalShape.AndShape(List.of(shape1, shape2)).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1)
-                  .containsOnlyOnce(container2)
-                  .containsOnlyOnce(containment2);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1)
+                .containsOnlyOnce(container2)
+                .containsOnlyOnce(containment2);
     }
 
     @Test
@@ -50,15 +49,15 @@ public class LogicalShapeTest {
     void or() {
         Assertions.assertThatThrownBy(() -> new LogicalShape.OrShape(Collections.emptyList()));
         Assertions.assertThat(new LogicalShape.OrShape(List.of(shape1)).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1);
         Assertions.assertThat(new LogicalShape.OrShape(List.of(shape1, shape2)).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1)
-                  .containsOnlyOnce(container2)
-                  .containsOnlyOnce(containment2);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1)
+                .containsOnlyOnce(container2)
+                .containsOnlyOnce(containment2);
     }
 
     @Test
@@ -66,15 +65,15 @@ public class LogicalShapeTest {
     void xone() {
         Assertions.assertThatThrownBy(() -> new LogicalShape.XoneShape(Collections.emptyList()));
         Assertions.assertThat(new LogicalShape.XoneShape(List.of(shape1)).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1);
         Assertions.assertThat(new LogicalShape.XoneShape(List.of(shape1, shape2)).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1)
-                  .containsOnlyOnce(container2)
-                  .containsOnlyOnce(containment2);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1)
+                .containsOnlyOnce(container2)
+                .containsOnlyOnce(containment2);
     }
 
     @Test
@@ -82,9 +81,9 @@ public class LogicalShapeTest {
     void not() {
         Assertions.assertThatThrownBy(() -> new LogicalShape.NotShape(null));
         Assertions.assertThat(new LogicalShape.NotShape(shape1).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1);
 
     }
 
@@ -96,10 +95,10 @@ public class LogicalShapeTest {
         Assertions.assertThatThrownBy(() -> new LogicalShape.ImpliesShape(null, shape2));
 
         Assertions.assertThat(new LogicalShape.ImpliesShape(shape1, shape2).asShape())
-                  .isNotNull()
-                  .containsOnlyOnce(container1)
-                  .containsOnlyOnce(containment1)
-                  .containsOnlyOnce(container2)
-                  .containsOnlyOnce(containment2);
+                .isNotNull()
+                .containsOnlyOnce(container1)
+                .containsOnlyOnce(containment1)
+                .containsOnlyOnce(container2)
+                .containsOnlyOnce(containment2);
     }
 }
