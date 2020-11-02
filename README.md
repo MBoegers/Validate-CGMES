@@ -32,7 +32,7 @@ The input files are in the [OCL](src/main/resources/ocl) resource directory.
 2) Display grid content with values
 
 **Upcomming:**
-1) Start measurments from UI
+1) Start measurments from UI using [MBoegers/shacl-validate-cim](https://github.com/MBoegers/shacl-validate-cim)
 2) Display measurment results
 
 ## References
