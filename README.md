@@ -26,6 +26,15 @@ SHACL shapes are generated from the invariants.
 The program files are in the [Java](src/main/java) source directory.
 The input files are in the [OCL](src/main/resources/ocl) resource directory.
 
+## Progress
+**Implemented:**
+1) Load CGMES model via UI
+2) Display grid content with values
+
+**Upcomming:**
+1) Start measurments from UI
+2) Display measurment results
+
 ## References
 * [Common Grid Model Exchange Standard](https://www.entsoe.eu/digital/cim/cim-for-grid-models-exchange/) provides:
   * CGMES definition
